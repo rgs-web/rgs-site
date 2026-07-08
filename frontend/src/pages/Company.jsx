@@ -57,6 +57,60 @@ const Company = () => {
         </div>
       </section>
 
+      {/* Team - Leadership */}
+      <section className="relative pb-24">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-10">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-10 mb-14">
+            <div className="md:col-span-5">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-6 h-px bg-[#C8102E]" />
+                <span className="text-[11px] tracking-[0.28em] text-[#C8102E] uppercase">Leadership</span>
+              </div>
+              <h2 className="font-serif text-4xl md:text-5xl text-white leading-tight">
+                Our <span className="italic">management</span> team.
+              </h2>
+            </div>
+            <div className="md:col-span-7 flex items-end">
+              <p className="text-[#B8C4D9] text-lg leading-relaxed">
+                Unparalleled experience in special operations, intelligence, contracting, and organizational leadership — combined into a single, senior team.
+              </p>
+            </div>
+          </div>
+
+          <div className="border-t border-[#1A2C4E]">
+            {TEAM.map((member, i) => {
+              const open = openIndex === i;
+              return (
+                <div key={i} className="border-b border-[#1A2C4E]">
+                  <button
+                    className="w-full flex items-center justify-between py-6 md:py-8 text-left group"
+                    onClick={() => setOpenIndex(open ? -1 : i)}
+                  >
+                    <div className="flex items-baseline gap-6">
+                      <span className="text-[13px] tracking-[0.2em] text-[#8B9BB5] w-10">0{i + 1}</span>
+                      <span className="font-serif text-2xl md:text-3xl text-white group-hover:text-[#C8102E] transition-colors">
+                        {member.role}
+                      </span>
+                    </div>
+                    <ChevronDown
+                      size={22}
+                      className={`text-[#C8102E] transition-transform ${open ? 'rotate-180' : ''}`}
+                    />
+                  </button>
+                  <div className={`grid transition-all duration-500 ${open ? 'grid-rows-[1fr] pb-8' : 'grid-rows-[0fr]'}`}>
+                    <div className="overflow-hidden">
+                      <div className="md:pl-[64px] max-w-3xl text-[#B8C4D9] text-[16px] leading-relaxed">
+                        {member.bio}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* Values */}
       <section className="relative py-24 bg-[#080F22] border-y border-[#1A2C4E]">
         <div className="absolute inset-0 rgs-grid-bg opacity-20" />
@@ -110,62 +164,8 @@ const Company = () => {
         </div>
       </section>
 
-      {/* Team */}
-      <section className="relative py-24 border-t border-[#1A2C4E]">
-        <div className="max-w-[1400px] mx-auto px-6 md:px-10">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-10 mb-14">
-            <div className="md:col-span-5">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-6 h-px bg-[#C8102E]" />
-                <span className="text-[11px] tracking-[0.28em] text-[#C8102E] uppercase">Leadership</span>
-              </div>
-              <h2 className="font-serif text-4xl md:text-5xl text-white leading-tight">
-                Our <span className="italic">management</span> team.
-              </h2>
-            </div>
-            <div className="md:col-span-7 flex items-end">
-              <p className="text-[#B8C4D9] text-lg leading-relaxed">
-                Unparalleled experience in special operations, intelligence, contracting, and organizational leadership — combined into a single, senior team.
-              </p>
-            </div>
-          </div>
-
-          <div className="border-t border-[#1A2C4E]">
-            {TEAM.map((member, i) => {
-              const open = openIndex === i;
-              return (
-                <div key={i} className="border-b border-[#1A2C4E]">
-                  <button
-                    className="w-full flex items-center justify-between py-6 md:py-8 text-left group"
-                    onClick={() => setOpenIndex(open ? -1 : i)}
-                  >
-                    <div className="flex items-baseline gap-6">
-                      <span className="text-[13px] tracking-[0.2em] text-[#8B9BB5] w-10">0{i + 1}</span>
-                      <span className="font-serif text-2xl md:text-3xl text-white group-hover:text-[#C8102E] transition-colors">
-                        {member.role}
-                      </span>
-                    </div>
-                    <ChevronDown
-                      size={22}
-                      className={`text-[#C8102E] transition-transform ${open ? 'rotate-180' : ''}`}
-                    />
-                  </button>
-                  <div className={`grid transition-all duration-500 ${open ? 'grid-rows-[1fr] pb-8' : 'grid-rows-[0fr]'}`}>
-                    <div className="overflow-hidden">
-                      <div className="md:pl-[64px] max-w-3xl text-[#B8C4D9] text-[16px] leading-relaxed">
-                        {member.bio}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
       {/* CTA */}
-      <section className="relative py-24">
+      <section className="relative py-24 border-t border-[#1A2C4E]">
         <div className="max-w-[1400px] mx-auto px-6 md:px-10">
           <div className="relative border border-[#1A2C4E] p-10 md:p-16 overflow-hidden">
             <div className="absolute inset-0 rgs-hero-glow" />
