@@ -8,10 +8,11 @@ const Footer = () => {
       <div className="max-w-[1400px] mx-auto px-6 md:px-10 py-16 grid grid-cols-1 md:grid-cols-4 gap-10">
         <div className="md:col-span-2">
           <div className="flex items-center gap-3 mb-4">
-            <div className="relative w-8 h-8 flex items-center justify-center">
-              <div className="absolute inset-0 border border-white/70 rotate-45" />
-              <div className="absolute w-2 h-2 bg-[#C8102E]" />
-            </div>
+            <img
+              src="https://customer-assets.emergentagent.com/job_coreone-builder/artifacts/0gu8ezo7_RGS-rgb-sm.png"
+              alt="Reliant Global Solutions"
+              className="w-10 h-10 object-contain"
+            />
             <div className="leading-tight">
               <div className="text-white font-semibold tracking-[0.18em] text-[13px]">RELIANT</div>
               <div className="text-[#8B9BB5] tracking-[0.28em] text-[10px]">GLOBAL SOLUTIONS</div>

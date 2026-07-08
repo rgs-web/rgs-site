@@ -26,10 +26,11 @@ const Header = () => {
     >
       <div className="max-w-[1400px] mx-auto px-6 md:px-10 h-[72px] flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3 group">
-          <div className="relative w-8 h-8 flex items-center justify-center">
-            <div className="absolute inset-0 border border-white/70 rotate-45 group-hover:border-[#C8102E] transition-colors" />
-            <div className="absolute w-2 h-2 bg-[#C8102E]" />
-          </div>
+          <img
+            src="https://customer-assets.emergentagent.com/job_coreone-builder/artifacts/0gu8ezo7_RGS-rgb-sm.png"
+            alt="Reliant Global Solutions"
+            className="w-10 h-10 object-contain"
+          />
           <div className="leading-tight">
             <div className="text-white font-semibold tracking-[0.18em] text-[13px]">RELIANT</div>
             <div className="text-[#8B9BB5] tracking-[0.28em] text-[10px]">GLOBAL SOLUTIONS</div>
