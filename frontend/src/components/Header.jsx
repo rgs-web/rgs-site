@@ -14,8 +14,7 @@ const Header = () => {
 
   const nav = [
     { to: '/', label: 'Home' },
-    { to: '/company', label: 'Company' },
-    { to: '/contact', label: 'Contact' }
+    { to: '/company', label: 'Company' }
   ];
 
   return (
@@ -49,7 +48,7 @@ const Header = () => {
             </NavLink>
           ))}
           <Link to="/contact" className="rgs-btn text-[13px] py-2.5 px-5">
-            Engage Us
+            Contact
           </Link>
         </nav>
 
@@ -72,7 +71,7 @@ const Header = () => {
             </NavLink>
           ))}
           <Link to="/contact" onClick={() => setOpen(false)} className="rgs-btn text-[13px] py-2.5 px-5 w-fit">
-            Engage Us
+            Contact
           </Link>
         </div>
       )}
