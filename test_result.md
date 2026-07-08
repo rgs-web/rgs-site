@@ -173,3 +173,9 @@ agent_communication:
         - Global DOM search confirms 0 matches for removed content
         - Screenshot evidence captured
         No further action needed for this task.
+
+    - agent: "testing"
+      message: |
+        Verified via browser automation. Security tab bullets contain exactly the 4 required items and
+        "Commercial offerings at reliantgs-corp.com" is NOT present. Global DOM search returned 0 matches
+        for both "Commercial offerings" and "reliantgs-corp". Bug fix confirmed working.
