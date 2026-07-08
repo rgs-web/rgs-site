@@ -89,7 +89,7 @@ export const STATS = [
     detail: 'Certified small business trusted by the U.S. Government.'
   },
   {
-    value: '6',
+    value: 'Six (6)',
     label: 'Core Mission Disciplines',
     detail: 'Mission Support, Cyber, Human Performance, Logistics, Training, Security.'
   },
