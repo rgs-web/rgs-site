@@ -76,7 +76,7 @@ const Home = () => {
             </div>
             <div className="md:col-span-7 md:col-start-6 flex items-end">
               <p className="text-[#B8C4D9] text-lg leading-relaxed">
-                We design and deliver solutions to the most difficult problems facing our U.S. national security and defense partners — with a deep bench of highly qualified operators available on demand.
+                Reliant Global Solutions delivers cleared intelligence professionals, advanced technical solutions, and mission support to the U.S. Government's most demanding national security organizations.
               </p>
             </div>
           </div>
