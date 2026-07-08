@@ -1,7 +1,10 @@
 import { useState } from 'react';
+import axios from 'axios';
 import { Mail, Phone, MapPin, Send, CheckCircle2 } from 'lucide-react';
 import { useToast } from '../hooks/use-toast';
 import { CONTACT_INFO } from '../data/mock';
+
+const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
 const Contact = () => {
   const { toast } = useToast();
@@ -24,20 +27,29 @@ const Contact = () => {
       return;
     }
     setSubmitting(true);
-    // Mock submission - persist to localStorage for demo
-    setTimeout(() => {
-      try {
-        const existing = JSON.parse(localStorage.getItem('rgs_contact_submissions') || '[]');
-        existing.push({ ...form, submitted_at: new Date().toISOString() });
-        localStorage.setItem('rgs_contact_submissions', JSON.stringify(existing));
-      } catch {}
-      setSubmitting(false);
+    try {
+      const payload = {
+        name: form.name.trim(),
+        email: form.email.trim(),
+        company: form.company.trim() || null,
+        phone: form.phone.trim() || null,
+        message: form.message.trim()
+      };
+      await axios.post(`${API}/contact`, payload);
       setSubmitted(true);
       toast({
         title: 'Message received',
         description: 'Thank you — our team will be in touch shortly.'
       });
-    }, 900);
+    } catch (err) {
+      const detail =
+        err?.response?.data?.detail ||
+        (Array.isArray(err?.response?.data?.detail) ? err.response.data.detail[0]?.msg : null) ||
+        'Something went wrong. Please try again or email us directly.';
+      toast({ title: 'Submission failed', description: String(detail) });
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (

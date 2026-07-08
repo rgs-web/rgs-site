@@ -179,3 +179,70 @@ agent_communication:
         Verified via browser automation. Security tab bullets contain exactly the 4 required items and
         "Commercial offerings at reliantgs-corp.com" is NOT present. Global DOM search returned 0 matches
         for both "Commercial offerings" and "reliantgs-corp". Bug fix confirmed working.
+
+backend:
+  - task: "Contact form submission endpoint (POST /api/contact, GET /api/contact)"
+    implemented: true
+    working: true
+    file: "/app/backend/server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        - working: "NA"
+          agent: "main"
+          comment: |
+            Added POST /api/contact and GET /api/contact endpoints. Saves submissions to MongoDB
+            collection `contact_submissions`. Validates name (required), email (required + EmailStr),
+            company (optional), phone (optional), message (required). Returns 201 with the created
+            submission on success. GET returns list sorted by submitted_at desc.
+        - working: true
+          agent: "testing"
+          comment: |
+            ✅ ALL TESTS PASSED (11/11). Comprehensive testing completed via backend_test.py.
+            
+            **POST /api/contact endpoint:**
+            ✅ Test 1: Full payload POST - Returns 201 with all fields (id, name, email, company, phone, message, submitted_at, status="new")
+            ✅ Test 2: Required-only POST - Accepts name, email, message only; company and phone correctly set to null
+            ✅ Test 3a-c: Missing required fields - Correctly returns 422 for missing name, email, or message
+            ✅ Test 4: Invalid email validation - Returns 422 with proper Pydantic error for invalid email format
+            ✅ Test 5: Empty string validation - Returns 422 for empty name or message (min_length=1 enforced)
+            
+            **GET /api/contact endpoint:**
+            ✅ Test 6: GET /api/contact - Returns array of submissions sorted newest first (submitted_at desc)
+            
+            **Regression tests (existing endpoints):**
+            ✅ Test 7a: GET /api/ - Returns {"message": "Hello World"}
+            ✅ Test 7b: POST /api/status - Returns 200 with StatusCheck object
+            ✅ Test 7c: GET /api/status - Returns list of status checks
+            
+            All validation rules working correctly. MongoDB persistence verified. No issues found.
+
+agent_communication:
+    - agent: "main"
+      message: |
+        Please test the new contact form backend endpoints.
+        1) POST /api/contact with a valid payload {name, email, company, phone, message} should return 201
+           with the created submission JSON containing id, submitted_at, status="new".
+        2) POST /api/contact missing required fields (name, email, or message) should return 422 or 400.
+        3) POST /api/contact with invalid email (e.g., "notanemail") should return 422.
+        4) POST /api/contact with only required fields (name, email, message) should succeed (company/phone optional).
+        5) GET /api/contact should return an array containing the submission(s) just created, newest first.
+        6) Also verify the existing endpoints still work: GET /api/, POST /api/status, GET /api/status.
+    - agent: "testing"
+      message: |
+        ✅ Contact form backend testing COMPLETE - ALL 11 TESTS PASSED.
+        
+        Created comprehensive test suite in /app/backend_test.py covering all requested scenarios:
+        - POST /api/contact: Full payload, required-only, all validation rules (missing fields, invalid email, empty strings)
+        - GET /api/contact: Verified submissions returned sorted newest first
+        - Regression: All existing endpoints (GET /api/, POST /api/status, GET /api/status) still working
+        
+        **Key findings:**
+        ✅ All validation working correctly (422 for missing/invalid fields)
+        ✅ Optional fields (company, phone) correctly set to null when not provided
+        ✅ MongoDB persistence working
+        ✅ Sorting by submitted_at desc working
+        ✅ No regression issues - existing endpoints unaffected
+        
+        The contact form backend is production-ready. No issues found.
