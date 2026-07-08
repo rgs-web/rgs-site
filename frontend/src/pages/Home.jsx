@@ -84,6 +84,9 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
             {/* Tabs */}
             <div className="md:col-span-4 flex flex-col border-l border-[#1A2C4E]">
+              <div className="pl-[18px] pb-4 mb-2 border-b border-[#1A2C4E] text-[11px] tracking-[0.28em] text-[#8B9BB5] uppercase">
+                Select Area of Interest
+              </div>
               {SERVICES.map((s) => {
                 const Icon = SERVICE_ICONS[s.id];
                 const active = activeService === s.id;
