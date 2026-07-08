@@ -116,12 +116,34 @@ const Home = () => {
                   {current.description}
                 </p>
                 <ul className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3">
-                  {current.bullets.map((b) => (
-                    <li key={b} className="flex items-start gap-3 text-[#E2E8F0] text-[15px]">
-                      <span className="mt-2 w-1.5 h-1.5 bg-[#C8102E] shrink-0" />
-                      <span>{b}</span>
-                    </li>
-                  ))}
+                  {current.bullets.map((b) => {
+                    // Auto-linkify URLs (www.* or http(s)://*) in bullets
+                    const parts = b.split(/(\bwww\.[^\s]+|\bhttps?:\/\/[^\s]+)/g);
+                    return (
+                      <li key={b} className="flex items-start gap-3 text-[#E2E8F0] text-[15px]">
+                        <span className="mt-2 w-1.5 h-1.5 bg-[#C8102E] shrink-0" />
+                        <span>
+                          {parts.map((part, i) => {
+                            if (/^(www\.|https?:\/\/)/.test(part)) {
+                              const href = part.startsWith('http') ? part : `https://${part}`;
+                              return (
+                                <a
+                                  key={i}
+                                  href={href}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="text-[#C8102E] underline underline-offset-4 hover:text-white transition-colors"
+                                >
+                                  {part}
+                                </a>
+                              );
+                            }
+                            return <span key={i}>{part}</span>;
+                          })}
+                        </span>
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             </div>

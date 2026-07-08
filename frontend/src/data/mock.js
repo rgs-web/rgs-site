@@ -63,7 +63,7 @@ export const SERVICES = [
       'Full-spectrum exercises for SOF and IC customers',
       'Interagency and partner-nation programs',
       'Live and virtual events \u2014 partner sites or our venues',
-      'See our dedicated training division at reliant-training.com'
+      'For more information go to www.reliant-training.com'
     ]
   },
   {
