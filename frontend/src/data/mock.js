@@ -76,8 +76,7 @@ export const SERVICES = [
       'Advance teams and intelligence support',
       'Critical infrastructure protection',
       'Security teams in any area of the world',
-      'Critical cyber and personal security training',
-      'Commercial offerings at reliantgs-corp.com'
+      'Critical cyber and personal security training'
     ]
   }
 ];
