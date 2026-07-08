@@ -95,7 +95,7 @@ export const STATS = [
   {
     value: 'Global',
     label: 'Operating Footprint',
-    detail: 'Experience across permissive to denied environments on every continent.'
+    detail: 'Experience in difficult environments in over 50 countries on almost every continent.'
   },
   {
     value: 'Decades',
