@@ -39,8 +39,7 @@ const Company = () => {
               <div className="text-[11px] tracking-[0.28em] text-[#8B9BB5] uppercase mb-3">At a Glance</div>
               <ul className="space-y-4 text-white text-[15px]">
                 <li className="flex items-start gap-3"><span className="mt-2 w-1.5 h-1.5 bg-[#C8102E]" />Service Disabled, Veteran-Owned Small Business (SDVOSB)</li>
-                <li className="flex items-start gap-3"><span className="mt-2 w-1.5 h-1.5 bg-[#C8102E]" />Mission Support, Cyber, Human Performance</li>
-                <li className="flex items-start gap-3"><span className="mt-2 w-1.5 h-1.5 bg-[#C8102E]" />Logistics, Training, Security</li>
+                <li className="flex items-start gap-3"><span className="mt-2 w-1.5 h-1.5 bg-[#C8102E]" />Mission Support, Cyber, Human Performance, Logistics, Training, Security</li>
                 <li className="flex items-start gap-3"><span className="mt-2 w-1.5 h-1.5 bg-[#C8102E]" />Decades of national security experience</li>
                 <li className="flex items-start gap-3"><span className="mt-2 w-1.5 h-1.5 bg-[#C8102E]" />Agile. Scalable. Enduring.</li>
               </ul>
