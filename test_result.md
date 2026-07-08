@@ -101,3 +101,75 @@
 #====================================================================================================
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
+user_problem_statement: |
+  Reliant Global Solutions marketing website (clone-inspired by coreone.com). Dark navy + red-accented design.
+  Pages: Home, Company, Contact. Uses mock data (mock.js). Contact form currently mock (localStorage).
+
+frontend:
+  - task: "Remove 'Commercial offerings at reliantgs-corp.com' bullet from Security service on Home page"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/data/mock.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        - working: "NA"
+          agent: "main"
+          comment: |
+            User reported the bullet 'Commercial offerings at reliantgs-corp.com' was still visible under
+            Home > What We Do > Security. Removed the bullet from the SERVICES array in /app/frontend/src/data/mock.js.
+            Grep verified no matches for 'reliantgs-corp' or 'commercial offer' anywhere in /app/frontend/src.
+            Need testing agent to load http://localhost:3000, scroll to the "What We Do" section, click the
+            "Security" tab, and confirm the bullet list contains ONLY these 4 items in order:
+              1) Advance teams and intelligence support
+              2) Critical infrastructure protection
+              3) Security teams in any area of the world
+              4) Critical cyber and personal security training
+            The bullet 'Commercial offerings at reliantgs-corp.com' MUST NOT appear.
+        - working: true
+          agent: "testing"
+          comment: |
+            ✅ VERIFIED: Bug fix successful. Tested on http://localhost:3000.
+            - Navigated to Home page and scrolled to "What We Do" section
+            - Clicked "Security" tab in the service navigator
+            - Confirmed Security service displays correct title: "Security" and tagline: "Enterprise security. Special operations lineage."
+            - Verified bullet list contains EXACTLY 4 items in correct order:
+              1) Advance teams and intelligence support
+              2) Critical infrastructure protection
+              3) Security teams in any area of the world
+              4) Critical cyber and personal security training
+            - Global DOM search confirmed 0 matches for "Commercial offerings" and 0 matches for "reliantgs-corp"
+            - Screenshot captured showing correct bullet list
+            The removed bullet "Commercial offerings at reliantgs-corp.com" is NOT present anywhere on the page.
+
+metadata:
+  created_by: "main_agent"
+  version: "1.0"
+  test_sequence: 2
+  run_ui: true
+
+test_plan:
+  current_focus: []
+  stuck_tasks: []
+  test_all: false
+  test_priority: "high_first"
+
+agent_communication:
+    - agent: "main"
+      message: |
+        Please verify the fix on the Home page. Load http://localhost:3000, scroll to the "What We Do" section,
+        click the "Security" tab in the left-side service list, and confirm the bullets shown are ONLY:
+        (1) Advance teams and intelligence support, (2) Critical infrastructure protection,
+        (3) Security teams in any area of the world, (4) Critical cyber and personal security training.
+        Confirm that "Commercial offerings at reliantgs-corp.com" is NOT present.
+    - agent: "testing"
+      message: |
+        ✅ Bug fix verified successfully. The Security service on the Home page now displays exactly 4 bullets
+        as expected, and "Commercial offerings at reliantgs-corp.com" has been completely removed.
+        All test criteria passed:
+        - Correct bullet count (4 items)
+        - All bullet text matches expected content
+        - Global DOM search confirms 0 matches for removed content
+        - Screenshot evidence captured
+        No further action needed for this task.
