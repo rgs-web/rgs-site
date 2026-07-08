@@ -188,7 +188,7 @@ const Home = () => {
           </div>
 
           {/* Stats */}
-          <div className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-10 border-t border-[#1A2C4E] pt-10">
+          <div className="mt-24 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-6 gap-y-10 border-t border-[#1A2C4E] pt-10">
             {STATS.map((s) => (
               <div key={s.label} className="relative">
                 <div className="absolute -top-10 left-0 w-10 h-px bg-[#C8102E]" />

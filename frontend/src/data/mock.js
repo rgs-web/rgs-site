@@ -89,7 +89,7 @@ export const STATS = [
     detail: 'Certified small business trusted by the U.S. Government.'
   },
   {
-    value: 'Six (6)',
+    value: 'Six',
     label: 'Core Mission Disciplines',
     detail: 'Mission Support, Cyber, Human Performance, Logistics, Training, Security.'
   },
@@ -102,6 +102,11 @@ export const STATS = [
     value: 'Decades',
     label: 'Combined Operational Experience',
     detail: 'Intelligence, special operations, and training development at the highest levels.'
+  },
+  {
+    value: '1000+',
+    label: 'Training Courses and Exercises',
+    detail: 'Ranging from Cyber to Safe Travel to Left of X exercises.'
   }
 ];
 
