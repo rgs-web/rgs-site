@@ -86,8 +86,13 @@ const Contact = () => {
                     <Phone size={16} className="text-[#C8102E]" />
                   </div>
                   <div>
-                    <div className="text-[11px] tracking-[0.2em] text-[#8B9BB5] uppercase mb-1">Response Time</div>
-                    <div className="text-white text-[15px]">Within one business day</div>
+                    <div className="text-[11px] tracking-[0.2em] text-[#8B9BB5] uppercase mb-1">Phone</div>
+                    <a
+                      href={`tel:${CONTACT_INFO.phone.replace(/[^+\d]/g, '')}`}
+                      className="text-white text-[15px] hover:text-[#C8102E] transition-colors"
+                    >
+                      {CONTACT_INFO.phone}
+                    </a>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -95,8 +100,12 @@ const Contact = () => {
                     <MapPin size={16} className="text-[#C8102E]" />
                   </div>
                   <div>
-                    <div className="text-[11px] tracking-[0.2em] text-[#8B9BB5] uppercase mb-1">Operating Reach</div>
-                    <div className="text-white text-[15px]">CONUS & OCONUS · Global</div>
+                    <div className="text-[11px] tracking-[0.2em] text-[#8B9BB5] uppercase mb-1">Headquarters</div>
+                    <div className="text-white text-[15px] leading-relaxed">
+                      {CONTACT_INFO.address_line1}
+                      <br />
+                      {CONTACT_INFO.address_line2}
+                    </div>
                   </div>
                 </div>
               </div>

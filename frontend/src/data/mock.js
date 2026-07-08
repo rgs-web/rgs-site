@@ -168,6 +168,8 @@ export const COMPANY_COPY = {
 
 export const CONTACT_INFO = {
   email: 'solutions@reliantgs.com',
-  address: 'Reliant Global Solutions',
+  phone: '+1.303.284.3806',
+  address_line1: '1221 W Mineral Ave STE 101',
+  address_line2: 'Littleton, CO 80120',
   tagline: 'Elite Defense Professionals. Elite Customers. Difficult Problems. Proven Solutions.'
 };
