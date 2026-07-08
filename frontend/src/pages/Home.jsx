@@ -41,25 +41,16 @@ const Home = () => {
               <div className="w-8 h-px bg-[#C8102E]" />
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10 ml-auto">
+            <h1 className="font-serif text-white text-[52px] md:text-[86px] leading-[0.98] tracking-[-0.02em]">
+              Working at the <span className="italic text-[#C8102E]">nexus</span> of intelligence and operations.
+            </h1>
+
+            <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 ml-auto">
               {['Elite Defense Professionals', 'Elite Customers', 'Difficult Problems', 'Proven Solutions'].map((t) => (
                 <div key={t} className="border-r border-[#1A2C4E] pr-3 text-right">
                   <div className="text-[11px] tracking-[0.2em] text-[#8B9BB5] uppercase leading-snug">{t}</div>
                 </div>
               ))}
-            </div>
-
-            <h1 className="font-serif text-white text-[52px] md:text-[86px] leading-[0.98] tracking-[-0.02em]">
-              Working at the <span className="italic text-[#C8102E]">nexus</span> of intelligence and operations.
-            </h1>
-
-            <div className="mt-10 flex flex-wrap items-center gap-4 justify-end">
-              <Link to="/company" className="rgs-btn-ghost">
-                About Reliant
-              </Link>
-              <Link to="/contact" className="rgs-btn">
-                Engage Our Team <ArrowRight size={16} />
-              </Link>
             </div>
           </div>
         </div>
