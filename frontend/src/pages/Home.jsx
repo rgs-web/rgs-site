@@ -34,59 +34,32 @@ const Home = () => {
           </svg>
         </div>
 
-        <div className="relative max-w-[1400px] mx-auto px-6 md:px-10 w-full grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
-          <div className="md:col-span-8 rgs-fade">
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-8 h-px bg-[#C8102E]" />
+        <div className="relative max-w-[1400px] mx-auto px-6 md:px-10 w-full">
+          <div className="ml-auto max-w-4xl text-right rgs-fade">
+            <div className="flex items-center gap-3 mb-6 justify-end">
               <span className="text-[11px] tracking-[0.28em] text-[#C8102E] uppercase">Reliant Global Solutions</span>
+              <div className="w-8 h-px bg-[#C8102E]" />
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10 ml-auto">
+              {['Elite Defense Professionals', 'Elite Customers', 'Difficult Problems', 'Proven Solutions'].map((t) => (
+                <div key={t} className="border-r border-[#1A2C4E] pr-3 text-right">
+                  <div className="text-[11px] tracking-[0.2em] text-[#8B9BB5] uppercase leading-snug">{t}</div>
+                </div>
+              ))}
             </div>
 
             <h1 className="font-serif text-white text-[52px] md:text-[86px] leading-[0.98] tracking-[-0.02em]">
               Working at the <span className="italic text-[#C8102E]">nexus</span> of intelligence and operations.
             </h1>
 
-            <p className="mt-8 max-w-2xl text-[17px] md:text-[19px] leading-relaxed text-[#B8C4D9]">
-              For elite government clients. Elite defense professionals solving difficult problems with proven solutions — across permissive to denied environments worldwide.
-            </p>
-
-            <div className="mt-10 flex flex-wrap items-center gap-4">
-              <Link to="/contact" className="rgs-btn">
-                Engage Our Team <ArrowRight size={16} />
-              </Link>
+            <div className="mt-10 flex flex-wrap items-center gap-4 justify-end">
               <Link to="/company" className="rgs-btn-ghost">
                 About Reliant
               </Link>
-            </div>
-
-            <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl">
-              {['Elite Defense Professionals', 'Elite Customers', 'Difficult Problems', 'Proven Solutions'].map((t) => (
-                <div key={t} className="border-l border-[#1A2C4E] pl-3">
-                  <div className="text-[11px] tracking-[0.2em] text-[#8B9BB5] uppercase leading-snug">{t}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Right side visual */}
-          <div className="hidden md:flex md:col-span-4 justify-end">
-            <div className="relative w-[320px] h-[420px]">
-              <div className="absolute inset-0 border border-[#1A2C4E]" />
-              <div className="absolute -top-3 -left-3 w-16 h-16 border-t-2 border-l-2 border-[#C8102E]" />
-              <div className="absolute -bottom-3 -right-3 w-16 h-16 border-b-2 border-r-2 border-[#C8102E]" />
-              <div className="absolute inset-6 flex flex-col justify-between">
-                <div>
-                  <div className="text-[10px] tracking-[0.3em] text-[#8B9BB5]">EST. TRUST</div>
-                  <div className="mt-1 text-white text-3xl font-serif">SDVOSB</div>
-                </div>
-                <div className="rgs-stripes h-16 w-full opacity-70" />
-                <div>
-                  <div className="text-[10px] tracking-[0.3em] text-[#8B9BB5]">STATUS</div>
-                  <div className="mt-2 flex items-center gap-2">
-                    <span className="w-2 h-2 bg-[#C8102E] rgs-pulse" />
-                    <span className="text-white text-sm tracking-wide">Mission Ready</span>
-                  </div>
-                </div>
-              </div>
+              <Link to="/contact" className="rgs-btn">
+                Engage Our Team <ArrowRight size={16} />
+              </Link>
             </div>
           </div>
         </div>
