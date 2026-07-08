@@ -131,7 +131,30 @@ const Home = () => {
         <div className="absolute inset-0 rgs-grid-bg opacity-25" />
         <div className="relative max-w-[1400px] mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
-            <div className="md:col-span-5">
+            {/* Angular geometric visual */}
+            <div className="md:col-span-7 flex items-center justify-center order-2 md:order-1">
+              <div className="relative w-full max-w-[520px] aspect-square">
+                <div className="absolute inset-0 border border-[#1A2C4E] rotate-45" />
+                <div className="absolute inset-[10%] border border-[#1A2C4E] rotate-45" />
+                <div className="absolute inset-[20%] border border-[#C8102E]/40 rotate-45" />
+                <div className="absolute inset-[30%] border border-[#1A2C4E] rotate-45" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-4 h-4 bg-[#C8102E] rgs-pulse" />
+                </div>
+                {/* Radar sweeps */}
+                <svg className="absolute inset-0 w-full h-full" viewBox="0 0 200 200">
+                  <circle cx="100" cy="100" r="90" fill="none" stroke="#1A2C4E" strokeWidth="0.5" />
+                  <circle cx="100" cy="100" r="60" fill="none" stroke="#1A2C4E" strokeWidth="0.5" strokeDasharray="2 3" />
+                  <circle cx="100" cy="100" r="30" fill="none" stroke="#C8102E" strokeWidth="0.5" strokeOpacity="0.5" />
+                  <line x1="100" y1="10" x2="100" y2="190" stroke="#1A2C4E" strokeWidth="0.5" />
+                  <line x1="10" y1="100" x2="190" y2="100" stroke="#1A2C4E" strokeWidth="0.5" />
+                </svg>
+                <div className="absolute top-4 left-4 text-[10px] tracking-[0.3em] text-[#8B9BB5]">RGS · 001</div>
+                <div className="absolute bottom-4 right-4 text-[10px] tracking-[0.3em] text-[#8B9BB5]">MISSION MATRIX</div>
+              </div>
+            </div>
+
+            <div className="md:col-span-5 order-1 md:order-2">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-6 h-px bg-[#C8102E]" />
                 <span className="text-[11px] tracking-[0.28em] text-[#C8102E] uppercase">Beyond the Mission</span>
@@ -161,29 +184,6 @@ const Home = () => {
               <p key={currentPillar.key} className="mt-6 text-[#B8C4D9] text-[16px] leading-relaxed rgs-fade">
                 {currentPillar.body}
               </p>
-            </div>
-
-            {/* Angular geometric visual */}
-            <div className="md:col-span-7 flex items-center justify-center">
-              <div className="relative w-full max-w-[520px] aspect-square">
-                <div className="absolute inset-0 border border-[#1A2C4E] rotate-45" />
-                <div className="absolute inset-[10%] border border-[#1A2C4E] rotate-45" />
-                <div className="absolute inset-[20%] border border-[#C8102E]/40 rotate-45" />
-                <div className="absolute inset-[30%] border border-[#1A2C4E] rotate-45" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-4 h-4 bg-[#C8102E] rgs-pulse" />
-                </div>
-                {/* Radar sweeps */}
-                <svg className="absolute inset-0 w-full h-full" viewBox="0 0 200 200">
-                  <circle cx="100" cy="100" r="90" fill="none" stroke="#1A2C4E" strokeWidth="0.5" />
-                  <circle cx="100" cy="100" r="60" fill="none" stroke="#1A2C4E" strokeWidth="0.5" strokeDasharray="2 3" />
-                  <circle cx="100" cy="100" r="30" fill="none" stroke="#C8102E" strokeWidth="0.5" strokeOpacity="0.5" />
-                  <line x1="100" y1="10" x2="100" y2="190" stroke="#1A2C4E" strokeWidth="0.5" />
-                  <line x1="10" y1="100" x2="190" y2="100" stroke="#1A2C4E" strokeWidth="0.5" />
-                </svg>
-                <div className="absolute top-4 left-4 text-[10px] tracking-[0.3em] text-[#8B9BB5]">RGS · 001</div>
-                <div className="absolute bottom-4 right-4 text-[10px] tracking-[0.3em] text-[#8B9BB5]">MISSION MATRIX</div>
-              </div>
             </div>
           </div>
 
