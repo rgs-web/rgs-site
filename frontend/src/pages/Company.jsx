@@ -57,7 +57,7 @@ const Company = () => {
       </section>
 
       {/* Team - Leadership */}
-      <section className="relative pb-24">
+      <section className="relative pt-24 pb-24">
         <div className="max-w-[1400px] mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-10 mb-14">
             <div className="md:col-span-5">
