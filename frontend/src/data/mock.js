@@ -167,7 +167,7 @@ export const COMPANY_COPY = {
 };
 
 export const CONTACT_INFO = {
-  email: 'kmccullum@reliantgs.com',
+  email: 'solutions@reliantgs.com',
   address: 'Reliant Global Solutions',
   tagline: 'Elite Defense Professionals. Elite Customers. Difficult Problems. Proven Solutions.'
 };
