@@ -152,10 +152,10 @@ const Home = () => {
       </section>
 
       {/* BEYOND THE MISSION - Pillars + stats */}
-      <section className="relative py-16 md:py-20 bg-[#080F22] border-y border-[#1A2C4E]">
+      <section className="relative py-20 md:py-24 bg-[#080F22] border-y border-[#1A2C4E]">
         <div className="absolute inset-0 rgs-grid-bg opacity-25" />
         <div className="relative max-w-[1400px] mx-auto px-6 md:px-10">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
             {/* Angular geometric visual */}
             <div className="md:col-span-6 flex items-center justify-center order-2 md:order-1">
               <div className="relative w-full max-w-[176px] aspect-square">
@@ -213,13 +213,13 @@ const Home = () => {
           </div>
 
           {/* Stats */}
-          <div className="mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-5 gap-y-6 border-t border-[#1A2C4E] pt-6">
+          <div className="mt-16 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-6 gap-y-8 border-t border-[#1A2C4E] pt-10">
             {STATS.map((s) => (
               <div key={s.label} className="relative">
-                <div className="absolute -top-6 left-0 w-8 h-px bg-[#C8102E]" />
-                <div className="font-serif text-white text-[36px] leading-none tracking-[-0.02em]">{s.value}</div>
-                <div className="mt-2 text-white font-medium text-[13px] leading-snug">{s.label}</div>
-                <div className="mt-1 text-[#8B9BB5] text-[12px] leading-relaxed">{s.detail}</div>
+                <div className="absolute -top-8 left-0 w-10 h-px bg-[#C8102E]" />
+                <div className="font-serif text-white text-[42px] leading-none tracking-[-0.02em]">{s.value}</div>
+                <div className="mt-3 text-white font-medium text-[14px] leading-snug">{s.label}</div>
+                <div className="mt-2 text-[#8B9BB5] text-[13px] leading-relaxed">{s.detail}</div>
               </div>
             ))}
           </div>
