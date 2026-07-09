@@ -152,7 +152,7 @@ const Home = () => {
       </section>
 
       {/* BEYOND THE MISSION - Pillars + stats */}
-      <section className="relative py-20 md:py-24 bg-[#080F22] border-y border-[#1A2C4E]">
+      <section className="relative pt-24 pb-40 md:pt-28 md:pb-48 bg-[#080F22] border-y border-[#1A2C4E]">
         <div className="absolute inset-0 rgs-grid-bg opacity-25" />
         <div className="relative max-w-[1400px] mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
@@ -213,7 +213,7 @@ const Home = () => {
           </div>
 
           {/* Stats */}
-          <div className="mt-16 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-6 gap-y-8 border-t border-[#1A2C4E] pt-10">
+          <div className="mt-28 md:mt-32 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-6 gap-y-8 border-t border-[#1A2C4E] pt-12">
             {STATS.map((s) => (
               <div key={s.label} className="relative">
                 <div className="absolute -top-8 left-0 w-10 h-px bg-[#C8102E]" />
