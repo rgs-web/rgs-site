@@ -158,7 +158,7 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
             {/* Angular geometric visual */}
             <div className="md:col-span-6 flex items-center justify-center order-2 md:order-1">
-              <div className="relative w-full max-w-[352px] aspect-square">
+              <div className="relative w-full max-w-[176px] aspect-square">
                 <div className="absolute inset-0 border border-[#1A2C4E] rotate-45" />
                 <div className="absolute inset-[10%] border border-[#1A2C4E] rotate-45" />
                 <div className="absolute inset-[20%] border border-[#C8102E]/40 rotate-45" />
