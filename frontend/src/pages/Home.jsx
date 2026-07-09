@@ -227,31 +227,31 @@ const Home = () => {
       </section>
 
       {/* INTERSECTION - Intelligence & Operations */}
-      <section className="relative py-32">
+      <section className="relative py-16">
         <div className="max-w-[1400px] mx-auto px-6 md:px-10">
-          <div className="text-center max-w-3xl mx-auto mb-20">
-            <div className="inline-flex items-center gap-3 mb-4">
+          <div className="text-center max-w-3xl mx-auto mb-10">
+            <div className="inline-flex items-center gap-3 mb-3">
               <div className="w-6 h-px bg-[#C8102E]" />
               <span className="text-[11px] tracking-[0.28em] text-[#C8102E] uppercase">The Nexus</span>
               <div className="w-6 h-px bg-[#C8102E]" />
             </div>
-            <h2 className="font-serif text-4xl md:text-6xl text-white leading-tight">
+            <h2 className="font-serif text-3xl md:text-5xl text-white leading-tight">
               We operate at the intersection of <span className="italic">intelligence</span> and <span className="italic">operations</span>.
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="rgs-corner p-10 border border-[#1A2C4E] bg-[#080F22] hover:bg-[#0A1428] transition-colors">
-              <div className="text-[11px] tracking-[0.28em] text-[#C8102E] uppercase mb-4">01 · Intelligence</div>
-              <h3 className="font-serif text-3xl text-white mb-4">Actionable Insight</h3>
-              <p className="text-[#B8C4D9] leading-relaxed">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div className="rgs-corner p-6 md:p-8 border border-[#1A2C4E] bg-[#080F22] hover:bg-[#0A1428] transition-colors">
+              <div className="text-[11px] tracking-[0.28em] text-[#C8102E] uppercase mb-3">01 · Intelligence</div>
+              <h3 className="font-serif text-2xl text-white mb-3">Actionable Insight</h3>
+              <p className="text-[#B8C4D9] text-[14px] leading-relaxed">
                 We enable the intelligence community to deliver actionable intelligence that informs decisions, mitigates threats, and supports critical operations to safeguard the United States and its allies.
               </p>
             </div>
-            <div className="rgs-corner p-10 border border-[#1A2C4E] bg-[#080F22] hover:bg-[#0A1428] transition-colors">
-              <div className="text-[11px] tracking-[0.28em] text-[#C8102E] uppercase mb-4">02 · Operations</div>
-              <h3 className="font-serif text-3xl text-white mb-4">Decisive Action</h3>
-              <p className="text-[#B8C4D9] leading-relaxed">
+            <div className="rgs-corner p-6 md:p-8 border border-[#1A2C4E] bg-[#080F22] hover:bg-[#0A1428] transition-colors">
+              <div className="text-[11px] tracking-[0.28em] text-[#C8102E] uppercase mb-3">02 · Operations</div>
+              <h3 className="font-serif text-2xl text-white mb-3">Decisive Action</h3>
+              <p className="text-[#B8C4D9] text-[14px] leading-relaxed">
                 We partner with special operations, defense, and interagency customers to deliver capabilities that defend the United States, deter aggression, and ensure peace and stability globally.
               </p>
             </div>
@@ -260,17 +260,17 @@ const Home = () => {
       </section>
 
       {/* CTA */}
-      <section className="relative py-24">
+      <section className="relative pb-16">
         <div className="max-w-[1400px] mx-auto px-6 md:px-10">
-          <div className="relative border border-[#1A2C4E] p-10 md:p-16 overflow-hidden">
+          <div className="relative border border-[#1A2C4E] p-6 md:p-10 overflow-hidden">
             <div className="absolute inset-0 rgs-hero-glow" />
-            <div className="relative grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+            <div className="relative grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
               <div className="md:col-span-8">
-                <div className="text-[11px] tracking-[0.28em] text-[#C8102E] uppercase mb-3">Engage</div>
-                <h3 className="font-serif text-3xl md:text-5xl text-white leading-tight">
+                <div className="text-[11px] tracking-[0.28em] text-[#C8102E] uppercase mb-2">Engage</div>
+                <h3 className="font-serif text-2xl md:text-4xl text-white leading-tight">
                   Bring us your <span className="italic">hardest</span> problem.
                 </h3>
-                <p className="mt-4 text-[#B8C4D9] max-w-xl">
+                <p className="mt-3 text-[#B8C4D9] text-[14px] max-w-xl">
                   Reliant Global Solutions is ready to support your most sensitive missions — anywhere in the world.
                 </p>
               </div>
