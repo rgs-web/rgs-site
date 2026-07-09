@@ -159,7 +159,7 @@ const Home = () => {
             {/* Mission Framework visual */}
             <div className="md:col-span-6 flex items-center justify-center order-2 md:order-1">
               <img
-                src="https://customer-assets.emergentagent.com/job_coreone-builder/artifacts/ld88d3de_RGS%20website%20graphic.jpg"
+                src="/rgs-mission-framework.png"
                 alt="Reliant Global Solutions Mission Framework — Agile, People, Technology, Enduring, Operational Excellence, Scalable — supporting Client Mission and National Security Objectives"
                 className="w-full max-w-[520px] h-auto"
                 loading="lazy"
