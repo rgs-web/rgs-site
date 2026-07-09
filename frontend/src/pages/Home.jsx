@@ -152,19 +152,19 @@ const Home = () => {
       </section>
 
       {/* BEYOND THE MISSION - Pillars + stats */}
-      <section className="relative py-32 bg-[#080F22] border-y border-[#1A2C4E]">
+      <section className="relative py-16 md:py-20 bg-[#080F22] border-y border-[#1A2C4E]">
         <div className="absolute inset-0 rgs-grid-bg opacity-25" />
         <div className="relative max-w-[1400px] mx-auto px-6 md:px-10">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
             {/* Angular geometric visual */}
-            <div className="md:col-span-7 flex items-center justify-center order-2 md:order-1">
-              <div className="relative w-full max-w-[520px] aspect-square">
+            <div className="md:col-span-6 flex items-center justify-center order-2 md:order-1">
+              <div className="relative w-full max-w-[340px] aspect-square">
                 <div className="absolute inset-0 border border-[#1A2C4E] rotate-45" />
                 <div className="absolute inset-[10%] border border-[#1A2C4E] rotate-45" />
                 <div className="absolute inset-[20%] border border-[#C8102E]/40 rotate-45" />
                 <div className="absolute inset-[30%] border border-[#1A2C4E] rotate-45" />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-4 h-4 bg-[#C8102E] rgs-pulse" />
+                  <div className="w-3 h-3 bg-[#C8102E] rgs-pulse" />
                 </div>
                 {/* Radar sweeps */}
                 <svg className="absolute inset-0 w-full h-full" viewBox="0 0 200 200">
@@ -174,29 +174,29 @@ const Home = () => {
                   <line x1="100" y1="10" x2="100" y2="190" stroke="#1A2C4E" strokeWidth="0.5" />
                   <line x1="10" y1="100" x2="190" y2="100" stroke="#1A2C4E" strokeWidth="0.5" />
                 </svg>
-                <div className="absolute top-4 left-4 text-[10px] tracking-[0.3em] text-[#8B9BB5]">RGS · 001</div>
-                <div className="absolute bottom-4 right-4 text-[10px] tracking-[0.3em] text-[#8B9BB5]">MISSION MATRIX</div>
+                <div className="absolute top-3 left-3 text-[9px] tracking-[0.3em] text-[#8B9BB5]">RGS · 001</div>
+                <div className="absolute bottom-3 right-3 text-[9px] tracking-[0.3em] text-[#8B9BB5]">MISSION MATRIX</div>
               </div>
             </div>
 
-            <div className="md:col-span-5 order-1 md:order-2">
-              <div className="flex items-center gap-3 mb-4">
+            <div className="md:col-span-6 order-1 md:order-2">
+              <div className="flex items-center gap-3 mb-3">
                 <div className="w-6 h-px bg-[#C8102E]" />
                 <span className="text-[11px] tracking-[0.28em] text-[#C8102E] uppercase">Beyond the Mission</span>
               </div>
-              <h2 className="font-serif text-4xl md:text-5xl text-white leading-tight">
+              <h2 className="font-serif text-3xl md:text-4xl text-white leading-tight">
                 Agile. Scalable. <span className="italic">Enduring.</span>
               </h2>
-              <p className="mt-6 text-[#B8C4D9] leading-relaxed">
+              <p className="mt-4 text-[#B8C4D9] text-[15px] leading-relaxed">
                 The work we do transcends immediate objectives. Every engagement is designed to build lasting capability for the nation we serve.
               </p>
 
-              <div className="mt-10 flex gap-6 border-b border-[#1A2C4E] pb-4">
+              <div className="mt-6 flex gap-6 border-b border-[#1A2C4E] pb-3">
                 {PILLARS.map((p) => (
                   <button
                     key={p.key}
                     onClick={() => setActivePillar(p.key)}
-                    className={`text-lg font-medium tracking-tight pb-3 -mb-[17px] border-b-2 transition-colors ${
+                    className={`text-base font-medium tracking-tight pb-2 -mb-[13px] border-b-2 transition-colors ${
                       activePillar === p.key
                         ? 'text-white border-[#C8102E]'
                         : 'text-[#8B9BB5] border-transparent hover:text-white'
@@ -206,20 +206,20 @@ const Home = () => {
                   </button>
                 ))}
               </div>
-              <p key={currentPillar.key} className="mt-6 text-[#B8C4D9] text-[16px] leading-relaxed rgs-fade">
+              <p key={currentPillar.key} className="mt-4 text-[#B8C4D9] text-[14px] leading-relaxed rgs-fade">
                 {currentPillar.body}
               </p>
             </div>
           </div>
 
           {/* Stats */}
-          <div className="mt-24 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-6 gap-y-10 border-t border-[#1A2C4E] pt-10">
+          <div className="mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-5 gap-y-6 border-t border-[#1A2C4E] pt-6">
             {STATS.map((s) => (
               <div key={s.label} className="relative">
-                <div className="absolute -top-10 left-0 w-10 h-px bg-[#C8102E]" />
-                <div className="rgs-stat-num text-white">{s.value}</div>
-                <div className="mt-4 text-white font-medium text-[15px] leading-snug">{s.label}</div>
-                <div className="mt-2 text-[#8B9BB5] text-sm leading-relaxed">{s.detail}</div>
+                <div className="absolute -top-6 left-0 w-8 h-px bg-[#C8102E]" />
+                <div className="font-serif text-white text-[36px] leading-none tracking-[-0.02em]">{s.value}</div>
+                <div className="mt-2 text-white font-medium text-[13px] leading-snug">{s.label}</div>
+                <div className="mt-1 text-[#8B9BB5] text-[12px] leading-relaxed">{s.detail}</div>
               </div>
             ))}
           </div>
