@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import axios from 'axios';
 import { Mail, Phone, MapPin, Send, CheckCircle2 } from 'lucide-react';
 import { useToast } from '../hooks/use-toast';
 import { CONTACT_INFO } from '../data/mock';
 
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
+const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
+const WEB3FORMS_KEY = process.env.REACT_APP_WEB3FORMS_KEY;
 
 const Contact = () => {
   const { toast } = useToast();
@@ -29,24 +29,46 @@ const Contact = () => {
     setSubmitting(true);
     try {
       const payload = {
+        access_key: WEB3FORMS_KEY,
+        subject: `New Contact Inquiry from ${form.name.trim()}`,
+        from_name: 'Reliant Global Solutions Website',
         name: form.name.trim(),
         email: form.email.trim(),
-        company: form.company.trim() || null,
-        phone: form.phone.trim() || null,
-        message: form.message.trim()
+        company: form.company.trim() || 'N/A',
+        phone: form.phone.trim() || 'N/A',
+        message: form.message.trim(),
+        // Optional Web3Forms extras
+        botcheck: '',
+        replyto: form.email.trim()
       };
-      await axios.post(`${API}/contact`, payload);
-      setSubmitted(true);
-      toast({
-        title: 'Message received',
-        description: 'Thank you — our team will be in touch shortly.'
+
+      const res = await fetch(WEB3FORMS_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
+        },
+        body: JSON.stringify(payload)
       });
+      const data = await res.json();
+
+      if (res.ok && data.success) {
+        setSubmitted(true);
+        toast({
+          title: 'Message received',
+          description: 'Thank you — our team will be in touch shortly.'
+        });
+      } else {
+        toast({
+          title: 'Submission failed',
+          description: data?.message || 'Something went wrong. Please try again or email us directly.'
+        });
+      }
     } catch (err) {
-      const detail =
-        err?.response?.data?.detail ||
-        (Array.isArray(err?.response?.data?.detail) ? err.response.data.detail[0]?.msg : null) ||
-        'Something went wrong. Please try again or email us directly.';
-      toast({ title: 'Submission failed', description: String(detail) });
+      toast({
+        title: 'Network error',
+        description: 'Unable to submit right now. Please try again or email us directly.'
+      });
     } finally {
       setSubmitting(false);
     }
